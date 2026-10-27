@@ -1,0 +1,53 @@
+[
+ {
+  "started": "2026-10-27T12:51:36+00:00",
+  "eur_czk": 24.365,
+  "sources": {
+   "idnes": {
+    "listed": 0,
+    "new": 0,
+    "details": 0,
+    "removed_by_detail": 0,
+    "complete_offers": [],
+    "errors": [
+     "rent: 429 anti-bot response from reality.idnes.cz"
+    ]
+   },
+   "bezrealitky": {
+    "listed": 1022,
+    "new": 1022,
+    "details": 398,
+    "removed_by_detail": 0,
+    "complete_offers": [
+     "rent"
+    ],
+    "errors": [
+     "detail bezrealitky-633527: Exception: HTTP 503",
+     "detail bezrealitky-995473: Exception: HTTP 503"
+    ]
+   },
+   "realitymix": {
+    "listed": 1699,
+    "new": 1699,
+    "details": 400,
+    "removed_by_detail": 0,
+    "complete_offers": [
+     "rent"
+    ],
+    "errors": []
+   },
+   "sreality": {
+    "listed": 3543,
+    "new": 3543,
+    "details": 699,
+    "removed_by_detail": 1,
+    "complete_offers": [
+     "rent"
+    ],
+    "errors": []
+   }
+  },
+  "finished": "2026-10-27T13:29:34+00:00",
+  "active": 6263
+ }
+]

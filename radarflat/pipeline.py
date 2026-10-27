@@ -271,6 +271,21 @@ def _flags(r: dict) -> str:
     return f
 
 
+_SDN = re.compile(r"^(https://d\d+-a\.sdn\.cz/[^?]+)(\?.*)?$")
+
+
+def _full_img(u: str) -> str:
+    from .sources.sreality import FULL
+    m = _SDN.match(u or "")
+    return m.group(1) + FULL if m else u
+
+
+def _thumb(u: str | None) -> str | None:
+    from .sources.sreality import THUMB
+    m = _SDN.match(u or "")
+    return m.group(1) + THUMB if m else u
+
+
 def shard_of(rid: str) -> str:
     """FNV-1a 32-bit of the id, low byte as 2 hex digits (mirrored in site/assets/common.js)."""
     h = 0x811C9DC5
@@ -313,12 +328,12 @@ def publish(state: dict[str, dict], report: dict | None = None, rate: float | No
         if lat is None:
             alt = next((x for x in g if x.get("lat")), None)
             lat, lon = (alt["lat"], alt["lon"]) if alt else (None, None)
-        imgs = r.get("images") or next((x["images"] for x in g if x.get("images")), [])
+        imgs = [_full_img(u) for u in (r.get("images") or next((x["images"] for x in g if x.get("images")), []))]
         compact.append({
             "i": r["id"], "o": "r" if r["offer"] == "rent" else "s", "d": r.get("disp"), "a": r.get("area"),
             "p": r["price_czk"], "c": r.get("charges"), "m": pm2, "q": r.get("quarter"), "n": r.get("district"),
             "s": r.get("street"), "la": round(lat, 5) if lat else None, "lo": round(lon, 5) if lon else None,
-            "t": imgs[0] if imgs else None, "fs": first, "dr": drop or None, "dv": dev, "f": _flags(r),
+            "t": _thumb(imgs[0]) if imgs else None, "fs": first, "dr": drop or None, "dv": dev, "f": _flags(r),
             "fl": r.get("floor"), "src": r["source"], "x": len(g) - 1,
         })
         full = {k: v for k, v in r.items() if k not in ("missed",)}
@@ -326,8 +341,7 @@ def publish(state: dict[str, dict], report: dict | None = None, rate: float | No
         full["price_m2"] = pm2
         full["quarter_median_m2"] = round(m) if m else None
         full["also_on"] = [{"source": x["source"], "url": x["url"], "price_czk": x["price_czk"]} for x in g[1:]]
-        if not full.get("images"):
-            full["images"] = imgs
+        full["images"] = imgs
         shards.setdefault(shard_of(r["id"]), {})[r["id"]] = full
 
     compact.sort(key=lambda c: (c["fs"], c["i"]), reverse=True)

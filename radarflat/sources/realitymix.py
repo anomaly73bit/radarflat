@@ -78,14 +78,15 @@ def parse_detail(html: str) -> dict:
             out[field] = not fold(pairs[key]).startswith("ne")
     if (v := g("kauce", "vratna kauce")):
         out["deposit"] = to_int(v)
-    desc = re.search(r'<div[^>]+(?:class="[^"]*(?:advert-description|description)[^"]*"|itemprop="description")[^>]*>(.*?)</div>',
-                     html, re.S)
+    desc = (re.search(r'<div class="advert-description__text-inner-inner">(.*?)</div>', html, re.S)
+            or re.search(r'<div[^>]+itemprop="description"[^>]*>(.*?)</div>', html, re.S))
     if desc:
-        out["description"] = text(desc.group(1).replace("<br>", "\n"))[:4000] or None
-    imgs = re.findall(r'(https://st\.realitymix\.cz/i/\d+/\d+/nab_\d+_(?:detail|velky|original)[^"\'\s]*\.jpe?g)', html)
+        out["description"] = text(desc.group(1).replace("<br>", "\n").replace("<br />", "\n"))[:4000] or None
+    full = re.findall(r'(https?://st\.realitymix\.cz/i/\d+/\d+/nab_\d+\.jpe?g)', html)
+    small = re.findall(r'(https?://st\.realitymix\.cz/i/\d+/\d+/nab_\d+_detail\.jpe?g)', html)
+    imgs = [u.replace("http://", "https://") for u in (full or small)]
     if imgs:
-        big = [i for i in imgs if "_velky" in i or "_original" in i] or imgs
-        out["images"] = list(dict.fromkeys(big))[:40]
+        out["images"] = list(dict.fromkeys(imgs))[:40]
     lat = re.search(r'(?:lat|latitude)["\']?\s*[:=]\s*["\']?(50\.\d{3,})', html)
     lon = re.search(r'(?:lng|lon|longitude)["\']?\s*[:=]\s*["\']?(14\.\d{3,})', html)
     if lat and lon and in_prague(to_num(lat.group(1)), to_num(lon.group(1))):

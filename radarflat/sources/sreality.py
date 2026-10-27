@@ -16,6 +16,9 @@ from .base import Source, log
 API = "https://www.sreality.cz/api/v1/estates/search"
 DETAIL = "https://www.sreality.cz/api/v1/estates/{}"
 TYPE = {"rent": 2, "sale": 1}
+# The image CDN only serves a whitelist of sizes; these two are the ones Sreality itself uses.
+FULL = "?fl=res,1920,1080,1|wrm,/watermark/sreality.png,10|shr,,20|jpg,90"
+THUMB = "?fl=res,400,300,3|shr,,20|jpg,90"
 TYPE_SLUG = {"rent": "pronajem", "sale": "prodej"}
 
 
@@ -34,8 +37,7 @@ def to_listing(e: dict, offer: str) -> dict:
             dist = n if n <= 10 else None
         except (ValueError, IndexError):
             pass
-    imgs = [("https:" + i["advert_image_sdn_url"] if i["advert_image_sdn_url"].startswith("//") else i["advert_image_sdn_url"])
-            + "?fl=res,1024,768,1" for i in e.get("advert_images_all") or [] if i.get("advert_image_sdn_url")]
+    imgs = [_img(i["advert_image_sdn_url"]) for i in e.get("advert_images_all") or [] if i.get("advert_image_sdn_url")]
     name = e.get("advert_name") or ""
     d.update(
         disp=norm_disp(sub), area=_area(name), price=int(e["price_czk"]) if e.get("price_czk") else None,
@@ -47,7 +49,7 @@ def to_listing(e: dict, offer: str) -> dict:
 
 
 def _img(u: str) -> str:
-    return ("https:" + u if u.startswith("//") else u) + "?fl=res,1024,768,1"
+    return ("https:" + u if u.startswith("//") else u).split("?")[0] + FULL
 
 
 def _name(v) -> str:

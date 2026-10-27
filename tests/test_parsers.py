@@ -77,3 +77,10 @@ def test_sreality_detail():
     d = sreality.parse_detail(res)
     assert d["area"] == 52 and d["floor"] == 9 and d["lift"] is True and d["penb"] == "B"
     assert d["furnished"] == "yes" and d["description"] and len(d["images"]) > 5 and d["loggia"]
+
+
+def test_realitymix_detail():
+    d = realitymix.parse_detail(read("realitymix_detail.html"))
+    assert d["lat"] and d["penb"] == "G" and d["construction"] == "panel" and d["condition"] == "very_good"
+    assert d["images"] and all("_detail" not in u for u in d["images"])
+    assert d["description"] and "Popis nemovitosti" not in d["description"]

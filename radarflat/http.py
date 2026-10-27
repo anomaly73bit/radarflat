@@ -133,6 +133,11 @@ class PoliteClient:
                 err = e
                 time.sleep(2 ** attempt)
                 continue
+            if r.status_code == 429 and attempt < self.cfg.get("max_retries", 2) + 1:
+                ra = r.headers.get("Retry-After", "")
+                time.sleep(int(ra) if ra.isdigit() else 20 * (attempt + 1))
+                err = Exception("HTTP 429")
+                continue
             if r.status_code in (403, 429) or _looks_like_challenge(r):
                 raise Blocked(f"{r.status_code} anti-bot response from {host}")
             if r.status_code >= 500:

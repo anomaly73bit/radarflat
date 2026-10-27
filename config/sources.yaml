@@ -18,6 +18,8 @@ sources:
     enabled: true
   idnes:
     enabled: true
+    delay_seconds: [6, 10]          # answers 429 to quick requests; the client backs off and retries
+    max_retries: 4
   realitymix:
     enabled: true
   sreality:

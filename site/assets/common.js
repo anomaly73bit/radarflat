@@ -2,7 +2,7 @@
 (function () {
   const L = (window.I18N && window.I18N[RF.lang]) || {};
   const LOCALE = { it: "it-IT", en: "en-GB", cs: "cs-CZ" }[RF.lang] || "cs-CZ";
-  const nf = new Intl.NumberFormat(LOCALE, { maximumFractionDigits: 0 });
+  const nf = new Intl.NumberFormat(LOCALE, { maximumFractionDigits: 0, useGrouping: "always" });
 
   RF.t = (key, vars) => {
     let s = L[key] != null ? String(L[key]) : key;

@@ -89,9 +89,9 @@ button, input, select { font: inherit; color: inherit; }
 fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
 legend { font: 600 15px/1.2 var(--cond); padding: 0; margin-bottom: 6px; letter-spacing: .01em; }
 .unit { color: var(--muted); font-weight: 500; }
-.f-range { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.f-range legend { width: 100%; }
-.f-range input { width: calc(50% - 12px); }
+.f-range { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 6px; }
+.f-range legend { grid-column: 1 / -1; float: left; width: 100%; }
+.f-range input { width: 100%; min-width: 0; }
 input[type="number"], select {
   border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 7px 9px; min-height: 38px; width: 100%;
 }

@@ -1,0 +1,54 @@
+[
+ {
+  "ua": "bot",
+  "try": 0,
+  "status": 429,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<html>\r\n<head><title>429 Too Many Requests</title></head>\r\n<body>\r\n<center><h1>429 Too Many Requests</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+ },
+ {
+  "ua": "bot",
+  "try": 1,
+  "status": 429,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<html>\r\n<head><title>429 Too Many Requests</title></head>\r\n<body>\r\n<center><h1>429 Too Many Requests</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+ },
+ {
+  "ua": "bot",
+  "try": 2,
+  "status": 200,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<!DOCTYPE html>\n<!--[if IE 9 ]><html lang=\"cs\" class=\"ie9 no-js\"><![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--><html lang=\"cs\" class=\"no-js\"><!--<![endif]-->\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n\t\t<meta name=\"viewport\" content=\"width=device-width, in"
+ },
+ {
+  "ua": "browser",
+  "try": 0,
+  "status": 200,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<!DOCTYPE html>\n<!--[if IE 9 ]><html lang=\"cs\" class=\"ie9 no-js\"><![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--><html lang=\"cs\" class=\"no-js\"><!--<![endif]-->\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n\t\t<meta name=\"viewport\" content=\"width=device-width, in"
+ },
+ {
+  "ua": "browser",
+  "try": 1,
+  "status": 200,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<!DOCTYPE html>\n<!--[if IE 9 ]><html lang=\"cs\" class=\"ie9 no-js\"><![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--><html lang=\"cs\" class=\"no-js\"><!--<![endif]-->\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n\t\t<meta name=\"viewport\" content=\"width=device-width, in"
+ },
+ {
+  "ua": "browser",
+  "try": 2,
+  "status": 200,
+  "retry_after": null,
+  "server": "nginx",
+  "head": "<!DOCTYPE html>\n<!--[if IE 9 ]><html lang=\"cs\" class=\"ie9 no-js\"><![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--><html lang=\"cs\" class=\"no-js\"><!--<![endif]-->\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n\t\t<meta name=\"viewport\" content=\"width=device-width, in"
+ },
+ {
+  "realitymix": "https://realitymix.cz/detail/praha/pronajem-bytu-2-kk-45-m-praha-petrovice-4186610.html",
+  "status": 200
+ }
+]

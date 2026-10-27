@@ -1,0 +1,160 @@
+{
+  "robots_api_bezrealitky_cz": {
+    "url": "https://api.bezrealitky.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://api.bezrealitky.cz/robots.txt",
+    "size": 26,
+    "content_type": "text/plain"
+  },
+  "robots_www_realingo_cz": {
+    "url": "https://www.realingo.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.realingo.cz/robots.txt",
+    "size": 361,
+    "content_type": "text/plain"
+  },
+  "robots_reality_bazos_cz": {
+    "url": "https://reality.bazos.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://reality.bazos.cz/robots.txt",
+    "size": 912,
+    "content_type": "text/plain"
+  },
+  "robots_www_eurobydleni_cz": {
+    "url": "https://www.eurobydleni.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.eurobydleni.cz/robots.txt",
+    "size": 231,
+    "content_type": "text/plain"
+  },
+  "robots_www_mmreality_cz": {
+    "url": "https://www.mmreality.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.mmreality.cz/robots.txt",
+    "size": 171,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  "robots_www_remax-czech_cz": {
+    "url": "https://www.remax-czech.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.remax-czech.cz/robots.txt",
+    "size": 276,
+    "content_type": "text/plain"
+  },
+  "robots_www_century21_cz": {
+    "url": "https://www.century21.cz/robots.txt",
+    "status": 429,
+    "final_url": "https://www.century21.cz/robots.txt",
+    "size": 34225,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "robots_www_ceskereality_cz": {
+    "url": "https://www.ceskereality.cz/robots.txt",
+    "status": 403,
+    "final_url": "https://www.ceskereality.cz/robots.txt",
+    "size": 548,
+    "content_type": "text/html"
+  },
+  "robots_www_reality_cz": {
+    "url": "https://www.reality.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.reality.cz/robots.txt",
+    "size": 470,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  "robots_www_flatzone_cz": {
+    "url": "https://www.flatzone.cz/robots.txt",
+    "status": 200,
+    "final_url": "https://www.flatzone.cz/robots.txt",
+    "size": 1777,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  "robots_www_svobodni-pronajem_cz": {
+    "url": "https://www.svobodni-pronajem.cz/robots.txt",
+    "error": "ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\\'www.svobodni-pronajem.cz\\', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host=\\'www.svobodni-pronajem.cz\\', port=443): Failed to resolve \\'www.svobodni-pronajem.cz\\' ([Errno -2] Name or service not known)\"))'))"
+  },
+  "realitymix_0": {
+    "url": "https://realitymix.cz/reality/byty/pronajem/praha",
+    "status": 200,
+    "final_url": "https://realitymix.cz/reality/byty/pronajem/praha",
+    "size": 454846,
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "realitymix_1": {
+    "url": "https://realitymix.cz/reality/byty/pronajem/praha/hlavni-mesto-praha",
+    "status": 404,
+    "final_url": "https://realitymix.cz/reality/byty/pronajem/praha/hlavni-mesto-praha",
+    "size": 43272,
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "realitymix_2": {
+    "url": "https://realitymix.cz/reality/byty/prodej/praha",
+    "status": 200,
+    "final_url": "https://realitymix.cz/reality/byty/prodej/praha",
+    "size": 468651,
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "bazos_list": {
+    "url": "https://reality.bazos.cz/pronajmu/byt/praha/",
+    "status": 404,
+    "final_url": "https://reality.bazos.cz/pronajmu/byt/praha/",
+    "size": 46486,
+    "content_type": "text/html; charset=UTF-8"
+  },
+  "realingo_list": {
+    "url": "https://www.realingo.cz/pronajem/byty/praha/",
+    "status": 200,
+    "final_url": "https://www.realingo.cz/reality/cr/",
+    "size": 594483,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "ceskereality_list": {
+    "url": "https://www.ceskereality.cz/pronajem/byty/praha/",
+    "status": 403,
+    "final_url": "https://www.ceskereality.cz/pronajem/byty/praha/",
+    "size": 548,
+    "content_type": "text/html"
+  },
+  "idnes_detail": {
+    "url": "https://reality.idnes.cz/detail/pronajem/byt/praha-5-na-plzence/6ae094918b6728ae2d090d0e/",
+    "status": 200,
+    "final_url": "https://reality.idnes.cz/detail/pronajem/byt/praha-5-na-plzence/6ae094918b6728ae2d090d0e/",
+    "size": 78623,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "idnes_sale_list": {
+    "url": "https://reality.idnes.cz/s/prodej/byty/praha/",
+    "status": 200,
+    "final_url": "https://reality.idnes.cz/s/prodej/byty/praha/",
+    "size": 172077,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "idnes_page2": {
+    "url": "https://reality.idnes.cz/s/pronajem/byty/praha/?page=1",
+    "status": 200,
+    "final_url": "https://reality.idnes.cz/s/pronajem/byty/praha/?page=1",
+    "size": 178051,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "bez_detail": {
+    "url": "https://api.bezrealitky.cz/graphql/",
+    "status": 200,
+    "final_url": "https://api.bezrealitky.cz/graphql/",
+    "size": 310,
+    "content_type": "application/json"
+  },
+  "bez_sale_count": {
+    "url": "https://api.bezrealitky.cz/graphql/",
+    "status": 200,
+    "final_url": "https://api.bezrealitky.cz/graphql/",
+    "size": 43,
+    "content_type": "application/json"
+  },
+  "bez_html_detail": {
+    "url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/862741-nabidka-pronajem-bytu-u-pergamenky-praha",
+    "status": 200,
+    "final_url": "https://www.bezrealitky.cz/nemovitosti-byty-domy/862741-nabidka-pronajem-bytu-u-pergamenky-praha",
+    "size": 317961,
+    "content_type": "text/html; charset=utf-8"
+  }
+}

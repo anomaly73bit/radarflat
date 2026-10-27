@@ -1,0 +1,19 @@
+User-agent: PetalBot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-Agent: *
+Disallow: /offer/presmerovat/
+Disallow: /presmerovat/
+Disallow: /maps/
+Disallow: /data/
+Disallow: /oblibene
+Disallow: /site/
+Disallow: /offer/
+Disallow: /privacy
+Disallow: /pravidla-pouzivani
+Disallow: /graphql
+Disallow: /*_gps
+Sitemap: https://www.realingo.cz/sitemap/sitemap.xml

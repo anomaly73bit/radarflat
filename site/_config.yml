@@ -1,0 +1,9 @@
+title: RadarFlat
+url: https://radarflat.pacificit.solutions
+baseurl: ""
+languages: [it, en, cs]
+default_lang: it
+contact_email: info@pacificit.solutions
+markdown: kramdown
+exclude: [Gemfile, Gemfile.lock, README.md]
+keep_files: [data]

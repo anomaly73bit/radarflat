@@ -1,9 +1,0 @@
-Sitemap: https://www.remax-czech.cz/export/sitemap-list.xml
-Sitemap: https://www.remax-czech.cz/export/sitemap-listings.xml
-
-User-agent: *
-Disallow: /reality/en/
-Disallow: /rpc/
-Disallow: /hypoteka-partneri
-Disallow: /hypoteka-partneri-api
-Disallow: /tip-na-prodej-nemovitosti

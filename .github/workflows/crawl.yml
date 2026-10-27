@@ -1,0 +1,79 @@
+name: Crawl & publish
+
+on:
+  schedule:
+    - cron: "17 4,11,17 * * *"   # 3 times a day: 05:17, 12:17, 18:17 Prague winter time
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Only these sources (bezrealitky idnes realitymix sreality; empty = all enabled)"
+        required: false
+      details:
+        description: "Detail pages per source this run (empty = config value)"
+        required: false
+  push:
+    branches: [main]
+    paths: ["site/**", "!site/data/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  crawl:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    concurrency:
+      group: crawl
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Crawl
+        run: |
+          ARGS=""
+          [ -n "${{ inputs.sources }}" ] && ARGS="$ARGS --sources ${{ inputs.sources }}"
+          [ -n "${{ inputs.details }}" ] && ARGS="$ARGS --details ${{ inputs.details }}"
+          python -m radarflat crawl $ARGS
+      - name: Commit data
+        run: |
+          git config user.name "radarflat-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A state site/data
+          git diff --cached --quiet || git commit -q -m "data: crawl $(date -u +'%F %H:%M')"
+          for i in 1 2 3; do git pull --rebase -q -X theirs && git push -q && break; sleep 5; done
+
+  build:
+    needs: crawl
+    if: always() && (needs.crawl.result == 'success' || needs.crawl.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./site
+          destination: ./_site
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

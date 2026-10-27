@@ -1,0 +1,51 @@
+<!doctype html>
+{%- assign t = site.data.i18n[page.lang] -%}
+<html lang="{{ page.lang }}">
+<head>
+{% include head.html %}
+<meta name="robots" content="noindex">
+</head>
+<body class="page-detail">
+{% include header.html %}
+<main class="detail" id="detail">
+  <p class="back"><a href="{% if page.lang != site.default_lang %}/{{ page.lang }}{% endif %}/" id="back">{{ t.back }}</a></p>
+  <p id="state" class="empty">{{ t.loading }}</p>
+  <article id="flat" hidden>
+    <header class="d-head">
+      <div class="d-plates" id="d-plates"></div>
+      <h1 id="d-title"></h1>
+      <p class="d-price"><span id="d-price"></span> <span id="d-sub" class="sub"></span></p>
+      <p id="d-badges" class="badges"></p>
+    </header>
+    <section class="gallery" aria-label="Photos">
+      <figure class="g-main"><img id="g-img" alt="" referrerpolicy="no-referrer"><figcaption id="g-cap"></figcaption>
+        <button type="button" class="g-nav g-prev" id="g-prev" aria-label="‹">‹</button>
+        <button type="button" class="g-nav g-next" id="g-next" aria-label="›">›</button>
+      </figure>
+      <div class="g-thumbs" id="g-thumbs"></div>
+    </section>
+    <div class="d-cols">
+      <section class="d-facts">
+        <h2>{{ t.facts }}</h2>
+        <dl id="d-facts"></dl>
+        <h2>{{ t.description_h }}</h2>
+        <p class="note">{{ t.description_note }}</p>
+        <div id="d-desc" class="d-desc"></div>
+      </section>
+      <aside class="d-side">
+        <p><a id="d-open" class="btn" target="_blank" rel="noopener nofollow"></a></p>
+        <div id="d-also"></div>
+        <h2>{{ t.location }}</h2>
+        <div id="d-map" class="d-map"></div>
+        <h2>{{ t.price_history }}</h2>
+        <ol id="d-history" class="history"></ol>
+      </aside>
+    </div>
+  </article>
+</main>
+{% include footer.html %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="{{ '/assets/common.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/detail.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+it:
+  lang_name: Italiano
+  title: RadarFlat — tutti gli appartamenti di Praga
+  description: Tutti gli annunci di appartamenti in affitto e in vendita a Praga, raccolti da più portali in un'unica pagina con foto, mappa e filtri.
+  rent: Affitto
+  sale: Vendita
+  heading_rent: "{n} appartamenti in affitto a Praga"
+  heading_sale: "{n} appartamenti in vendita a Praga"
+  new_today: "{n} nuovi oggi"
+  updated: "Aggiornato {t}"
+  price: Prezzo
+  area: Superficie
+  min: min
+  max: max
+  layout: Disposizione
+  quarter: Quartiere
+  all_quarters: Tutti i quartieri
+  district: Distretto
+  extras: Dotazioni
+  lift: Ascensore
+  balcony: Balcone
+  terrace: Terrazza
+  loggia: Loggia
+  cellar: Cantina
+  parking: Parcheggio
+  garage: Garage
+  pets: Animali ammessi
+  private: Senza agenzia
+  furnished: Arredato
+  furnished_yes: arredato
+  furnished_partly: parzialmente arredato
+  furnished_no: non arredato
+  new_only: Solo nuovi (48 ore)
+  drops_only: Solo ribassi di prezzo
+  below_median: Sotto la media di zona
+  on_map_only: Solo l'area visibile sulla mappa
+  sort: Ordina
+  sort_new: Più recenti
+  sort_price_asc: Prezzo crescente
+  sort_price_desc: Prezzo decrescente
+  sort_m2_asc: Prezzo al m² più basso
+  sort_area_desc: Più grandi
+  sort_deal: Più sotto la media
+  reset: Azzera filtri
+  filters: Filtri
+  show_map: Mappa
+  show_list: Elenco
+  more: Mostra altri
+  per_month: /mese
+  per_m2: /m²
+  floor: piano
+  ground_floor: piano terra
+  new: Nuovo
+  drop: "−{n} %"
+  dev_below: "{n} % sotto la media di {q}"
+  dev_above: "{n} % sopra la media di {q}"
+  also_on: "anche su {n} altri siti"
+  also_on_1: anche su un altro sito
+  empty: Nessun annuncio con questi filtri. Allarga il prezzo o la superficie, oppure azzera i filtri.
+  loading: Carico gli annunci…
+  load_error: Non riesco a caricare gli annunci. Ricarica la pagina tra qualche minuto.
+  results: "{n} risultati"
+  # detail
+  back: Torna all'elenco
+  open_original: "Apri l'annuncio su {s}"
+  same_flat_elsewhere: Lo stesso appartamento su altri siti
+  facts: Dettagli
+  description_h: Descrizione
+  description_note: Testo originale dell'annuncio.
+  location: Posizione
+  price_history: Storico prezzo
+  first_seen: Visto la prima volta
+  charges: Spese
+  deposit: Cauzione
+  price_m2: Prezzo al m²
+  quarter_median: Media del quartiere
+  condition: Stato
+  construction: Costruzione
+  ownership: Proprietà
+  penb: Classe energetica
+  heating: Riscaldamento
+  available_from: Disponibile dal
+  floor_h: Piano
+  v_yes: sì
+  v_no: "no"
+  not_found: Questo annuncio non è più online. È stato rimosso dal sito di origine.
+  photos: "{n} foto"
+  condition_new: nuovo
+  condition_very_good: ottimo
+  condition_good: buono
+  condition_renovated: ristrutturato
+  condition_needs_renovation: da ristrutturare
+  condition_under_construction: in costruzione
+  construction_brick: mattoni
+  construction_panel: pannelli prefabbricati
+  construction_mixed: mista
+  construction_skeleton: struttura a telaio
+  construction_wood: legno
+  construction_other: altro
+  ownership_personal: piena proprietà
+  ownership_cooperative: cooperativa
+  ownership_municipal: comunale
+  heating_central: centralizzato
+  heating_gas: a gas
+  heating_electric: elettrico
+  heating_local: autonomo
+  heating_heat_pump: pompa di calore
+  heating_solid_fuel: combustibile solido
+  heating_other: altro
+  atypical: atipico
+  room: stanza
+  # footer
+  footer_what: RadarFlat raccoglie tre volte al giorno gli annunci di appartamenti a Praga da Bezrealitky, iDNES Reality e RealityMix, toglie i doppioni e li mostra qui. Le foto e i testi restano sui siti originali e ogni scheda porta all'annuncio.
+  footer_brand: Un servizio di Pacific IT Solutions s.r.o.
+  footer_contact: Contatti
+
+en:
+  lang_name: English
+  title: RadarFlat — every apartment in Prague
+  description: Every apartment for rent and for sale in Prague, collected from several listing sites onto one page with photos, a map and filters.
+  rent: Rent
+  sale: Buy
+  heading_rent: "{n} apartments for rent in Prague"
+  heading_sale: "{n} apartments for sale in Prague"
+  new_today: "{n} new today"
+  updated: "Updated {t}"
+  price: Price
+  area: Floor area
+  min: min
+  max: max
+  layout: Layout
+  quarter: Neighbourhood
+  all_quarters: All neighbourhoods
+  district: District
+  extras: Features
+  lift: Lift
+  balcony: Balcony
+  terrace: Terrace
+  loggia: Loggia
+  cellar: Cellar
+  parking: Parking
+  garage: Garage
+  pets: Pets allowed
+  private: No agency
+  furnished: Furnished
+  furnished_yes: furnished
+  furnished_partly: partly furnished
+  furnished_no: unfurnished
+  new_only: New only (48 hours)
+  drops_only: Price drops only
+  below_median: Below the area average
+  on_map_only: Only the area visible on the map
+  sort: Sort
+  sort_new: Newest
+  sort_price_asc: Price, low to high
+  sort_price_desc: Price, high to low
+  sort_m2_asc: Lowest price per m²
+  sort_area_desc: Largest
+  sort_deal: Furthest below average
+  reset: Clear filters
+  filters: Filters
+  show_map: Map
+  show_list: List
+  more: Show more
+  per_month: /month
+  per_m2: /m²
+  floor: floor
+  ground_floor: ground floor
+  new: New
+  drop: "−{n} %"
+  dev_below: "{n} % below the {q} average"
+  dev_above: "{n} % above the {q} average"
+  also_on: "also on {n} other sites"
+  also_on_1: also on one other site
+  empty: No listings match these filters. Widen the price or floor area, or clear the filters.
+  loading: Loading listings…
+  load_error: The listings couldn't be loaded. Reload the page in a few minutes.
+  results: "{n} results"
+  back: Back to the list
+  open_original: "Open the listing on {s}"
+  same_flat_elsewhere: The same flat on other sites
+  facts: Details
+  description_h: Description
+  description_note: Original listing text.
+  location: Location
+  price_history: Price history
+  first_seen: First seen
+  charges: Service charges
+  deposit: Deposit
+  price_m2: Price per m²
+  quarter_median: Neighbourhood average
+  condition: Condition
+  construction: Construction
+  ownership: Ownership
+  penb: Energy rating
+  heating: Heating
+  available_from: Available from
+  floor_h: Floor
+  v_yes: "yes"
+  v_no: "no"
+  not_found: This listing is no longer online. It was removed from the original site.
+  photos: "{n} photos"
+  condition_new: new
+  condition_very_good: very good
+  condition_good: good
+  condition_renovated: renovated
+  condition_needs_renovation: needs renovation
+  condition_under_construction: under construction
+  construction_brick: brick
+  construction_panel: panel (prefab)
+  construction_mixed: mixed
+  construction_skeleton: frame
+  construction_wood: wood
+  construction_other: other
+  ownership_personal: freehold
+  ownership_cooperative: cooperative
+  ownership_municipal: municipal
+  heating_central: central
+  heating_gas: gas
+  heating_electric: electric
+  heating_local: local
+  heating_heat_pump: heat pump
+  heating_solid_fuel: solid fuel
+  heating_other: other
+  atypical: atypical
+  room: room
+  footer_what: RadarFlat collects Prague apartment listings from Bezrealitky, iDNES Reality and RealityMix three times a day, removes duplicates and shows them here. Photos and texts stay on the original sites, and every listing links back to its source.
+  footer_brand: A service of Pacific IT Solutions s.r.o.
+  footer_contact: Contact
+
+cs:
+  lang_name: Čeština
+  title: RadarFlat — všechny byty v Praze
+  description: Všechny byty k pronájmu a na prodej v Praze z několika realitních serverů na jedné stránce, s fotkami, mapou a filtry.
+  rent: Pronájem
+  sale: Prodej
+  heading_rent: "{n} bytů k pronájmu v Praze"
+  heading_sale: "{n} bytů na prodej v Praze"
+  new_today: "{n} nových dnes"
+  updated: "Aktualizováno {t}"
+  price: Cena
+  area: Plocha
+  min: od
+  max: do
+  layout: Dispozice
+  quarter: Čtvrť
+  all_quarters: Všechny čtvrti
+  district: Obvod
+  extras: Vybavení
+  lift: Výtah
+  balcony: Balkon
+  terrace: Terasa
+  loggia: Lodžie
+  cellar: Sklep
+  parking: Parkování
+  garage: Garáž
+  pets: Zvířata povolena
+  private: Bez realitky
+  furnished: Vybavený
+  furnished_yes: vybavený
+  furnished_partly: částečně vybavený
+  furnished_no: nevybavený
+  new_only: Jen nové (48 hodin)
+  drops_only: Jen zlevněné
+  below_median: Pod průměrem čtvrti
+  on_map_only: Jen oblast viditelná na mapě
+  sort: Řadit
+  sort_new: Nejnovější
+  sort_price_asc: Od nejlevnějších
+  sort_price_desc: Od nejdražších
+  sort_m2_asc: Nejnižší cena za m²
+  sort_area_desc: Největší
+  sort_deal: Nejvíc pod průměrem
+  reset: Zrušit filtry
+  filters: Filtry
+  show_map: Mapa
+  show_list: Seznam
+  more: Zobrazit další
+  per_month: /měs.
+  per_m2: /m²
+  floor: patro
+  ground_floor: přízemí
+  new: Nové
+  drop: "−{n} %"
+  dev_below: "{n} % pod průměrem čtvrti {q}"
+  dev_above: "{n} % nad průměrem čtvrti {q}"
+  also_on: "i na dalších {n} webech"
+  also_on_1: i na jednom dalším webu
+  empty: Žádný inzerát neodpovídá filtrům. Rozšiřte cenu nebo plochu, nebo filtry zrušte.
+  loading: Načítám inzeráty…
+  load_error: Inzeráty se nepodařilo načíst. Zkuste stránku obnovit za pár minut.
+  results: "{n} výsledků"
+  back: Zpět na seznam
+  open_original: "Otevřít inzerát na {s}"
+  same_flat_elsewhere: Stejný byt na jiných webech
+  facts: Parametry
+  description_h: Popis
+  description_note: Původní text inzerátu.
+  location: Poloha
+  price_history: Vývoj ceny
+  first_seen: Poprvé viděno
+  charges: Poplatky
+  deposit: Kauce
+  price_m2: Cena za m²
+  quarter_median: Průměr čtvrti
+  condition: Stav
+  construction: Konstrukce
+  ownership: Vlastnictví
+  penb: PENB
+  heating: Topení
+  available_from: K nastěhování od
+  floor_h: Podlaží
+  v_yes: ano
+  v_no: ne
+  not_found: Tento inzerát už není online. Byl stažen z původního webu.
+  photos: "{n} fotek"
+  condition_new: novostavba
+  condition_very_good: velmi dobrý
+  condition_good: dobrý
+  condition_renovated: po rekonstrukci
+  condition_needs_renovation: před rekonstrukcí
+  condition_under_construction: ve výstavbě
+  construction_brick: cihlová
+  construction_panel: panelová
+  construction_mixed: smíšená
+  construction_skeleton: skeletová
+  construction_wood: dřevostavba
+  construction_other: jiná
+  ownership_personal: osobní
+  ownership_cooperative: družstevní
+  ownership_municipal: obecní
+  heating_central: ústřední
+  heating_gas: plynové
+  heating_electric: elektrické
+  heating_local: lokální
+  heating_heat_pump: tepelné čerpadlo
+  heating_solid_fuel: tuhá paliva
+  heating_other: jiné
+  atypical: atypický
+  room: pokoj
+  footer_what: RadarFlat třikrát denně sbírá inzeráty bytů v Praze z Bezrealitky, iDNES Reality a RealityMix, odstraní duplicity a zobrazí je zde. Fotky a texty zůstávají na původních webech a každý inzerát vede ke zdroji.
+  footer_brand: Služba společnosti Pacific IT Solutions s.r.o.
+  footer_contact: Kontakt

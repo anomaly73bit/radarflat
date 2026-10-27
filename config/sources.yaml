@@ -1,0 +1,30 @@
+# RadarFlat crawler settings
+defaults:
+  respect_robots_txt: true        # skip any URL the site's robots.txt disallows
+  delay_seconds: [3, 6]           # random pause between requests to the same host
+  timeout_seconds: 25
+  max_retries: 2
+  max_pages: 400                  # per offer type (rent / sale)
+  details_per_run: 250            # detail pages fetched per source per run (new listings first)
+  user_agent: "Mozilla/5.0 (compatible; RadarFlatBot/1.0; +https://radarflat.pacificit.solutions)"
+
+offers: [rent, sale]
+
+# A listing not seen for this many consecutive successful runs of its source is dropped.
+remove_after_missed_runs: 2
+
+sources:
+  bezrealitky:
+    enabled: true
+  idnes:
+    enabled: true
+  realitymix:
+    enabled: true
+  sreality:
+    # Sreality's robots.txt forbids all crawlers except search engines (checked 2026-10-27).
+    # Off by default. To use it anyway set BOTH of these to the opposite value.
+    enabled: false
+    respect_robots_txt: true
+    delay_seconds: [2, 4]
+
+eur_czk_fallback: 24.3            # used only if the ČNB daily rate can't be fetched

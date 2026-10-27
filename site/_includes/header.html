@@ -1,0 +1,19 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- if page.lang == site.default_lang -%}{%- assign home = "/" -%}{%- else -%}{%- capture home -%}/{{ page.lang }}/{%- endcapture -%}{%- endif -%}
+<header class="top">
+  <a class="brand" href="{{ home | relative_url }}" aria-label="RadarFlat">
+    <span class="plate plate--street"><span>RadarFlat</span></span>
+  </a>
+  {%- if page.kind == 'list' %}
+  <nav class="offer-switch" aria-label="{{ t.rent }} / {{ t.sale }}">
+    <button type="button" data-offer="r" aria-pressed="true">{{ t.rent }}</button>
+    <button type="button" data-offer="s" aria-pressed="false">{{ t.sale }}</button>
+  </nav>
+  {%- endif %}
+  <nav class="langs" aria-label="Language">
+    {%- for l in site.languages %}
+    {%- if l == site.default_lang -%}{%- assign lh = "/" -%}{%- else -%}{%- capture lh -%}/{{ l }}/{%- endcapture -%}{%- endif -%}
+    <a href="{{ lh | relative_url }}{{ page.path_tail | remove_first: '/' }}" hreflang="{{ l }}" data-keep-query {% if l == page.lang %}aria-current="true"{% endif %}>{{ l | upcase }}</a>
+    {%- endfor %}
+  </nav>
+</header>

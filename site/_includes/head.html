@@ -1,0 +1,19 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.kind == 'detail' %}{{ t.facts }} — RadarFlat{% else %}{{ t.title }}{% endif %}</title>
+<meta name="description" content="{{ t.description }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1d4f91">
+{%- for l in site.languages %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{% if l != site.default_lang %}/{{ l }}{% endif %}{{ page.path_tail }}">
+{%- endfor %}
+<link rel="icon" href="{{ '/assets/icon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script>window.RF = { lang: "{{ page.lang }}", base: "{{ site.baseurl }}", home: "{% if page.lang != site.default_lang %}/{{ page.lang }}{% endif %}/" };</script>
+<script src="{{ '/assets/i18n.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

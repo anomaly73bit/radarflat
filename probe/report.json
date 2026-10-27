@@ -1,0 +1,140 @@
+{
+  "sreality_v2_rent": {
+    "url": "https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=2&locality_region_id=10&per_page=5&page=1",
+    "method": "GET",
+    "status": 404,
+    "final_url": "https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=2&locality_region_id=10&per_page=5&page=1",
+    "content_type": "text/html; charset=utf-8",
+    "size": 548,
+    "head": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to di"
+  },
+  "sreality_v2_sale": {
+    "url": "https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=1&locality_region_id=10&per_page=5&page=1",
+    "method": "GET",
+    "status": 404,
+    "final_url": "https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=1&locality_region_id=10&per_page=5&page=1",
+    "content_type": "text/html; charset=utf-8",
+    "size": 548,
+    "head": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to di"
+  },
+  "sreality_v1_search": {
+    "url": "https://www.sreality.cz/api/v1/estates/search?category_main_cb=1&category_type_cb=2&locality_region_id=10&limit=5&offset=0&lang=cs",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.sreality.cz/api/v1/estates/search?category_main_cb=1&category_type_cb=2&locality_region_id=10&limit=5&offset=0&lang=cs",
+    "content_type": "application/json",
+    "size": 29393,
+    "head": "{\"meta_description\":\"3 532 byt\\u016f v aktu\\u00e1ln\\u00ed nab\\u00eddce Byty k pron\\u00e1jmu Praha \\u2713 Parametry hled\\u00e1n\\u00ed: Byty, Praha \\u2713 Nejv\\u011bt\\u0161\\u00ed nab\\u00eddka nemovitost\\u00ed v \\u010cesku (110 781 inzer\\u00e1t\\u016f) s hled\\u00e1n\\u00edm na map\\u011b a filtrov\\u00e1n\\"
+  },
+  "sreality_html": {
+    "url": "https://www.sreality.cz/hledani/pronajem/byty/praha",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.sreality.cz/hledani/pronajem/byty/praha",
+    "content_type": "text/html; charset=utf-8",
+    "size": 731069,
+    "head": "<!DOCTYPE html><html style=\"--app-promo-height:0px\" lang=\"cs\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" data-next-head=\"\"/><script type=\"module\" src=\"https://h.seznam.cz/js/cwl.js\" async=\"\" crossorigin=\"anonymous\"></script><t"
+  },
+  "bezrealitky_graphql": {
+    "url": "https://api.bezrealitky.cz/graphql/",
+    "method": "POST",
+    "status": 200,
+    "final_url": "https://api.bezrealitky.cz/graphql/",
+    "content_type": "application/json",
+    "size": 3970,
+    "head": "{\"data\":{\"listAdverts\":{\"totalCount\":1071,\"list\":[{\"id\":\"862741\",\"uri\":\"862741-nabidka-pronajem-bytu-u-pergamenky-praha\",\"offerType\":\"PRONAJEM\",\"estateType\":\"BYT\",\"disposition\":\"DISP_1_KK\",\"surface\":40,\"price\":22000,\"charges\":3505,\"currency\":\"CZK\",\"address\":\"U Pergamenky, Praha - Hole\\u0161ovice\",\"g"
+  },
+  "bezrealitky_html": {
+    "url": "https://www.bezrealitky.cz/vypis/nabidka-pronajem/byt/praha",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.bezrealitky.cz/vypis/nabidka-pronajem/byt/praha",
+    "content_type": "text/html; charset=utf-8",
+    "size": 383862,
+    "head": "<!DOCTYPE html><html id=\"bzrHtml\" lang=\"cs\"><head><meta charSet=\"utf-8\" data-next-head=\"\"/><meta content=\"minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover\" name=\"viewport\" data-next-head=\"\"/><title data-next-head=\"\">Pronájem bytu Praha | Be"
+  },
+  "idnes_html": {
+    "url": "https://reality.idnes.cz/s/pronajem/byty/praha/",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://reality.idnes.cz/s/pronajem/byty/praha/",
+    "content_type": "text/html; charset=utf-8",
+    "size": 172411,
+    "head": "<!DOCTYPE html>\n<!--[if IE 9 ]><html lang=\"cs\" class=\"ie9 no-js\"><![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--><html lang=\"cs\" class=\"no-js\"><!--<![endif]-->\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> \n\t\t<meta name=\"viewport\" content=\"width=device-width, in"
+  },
+  "realitymix_html": {
+    "url": "https://realitymix.cz/vypis-nabidek/?form%5Bdruh_objektu_ids%5D%5B%5D=2&form%5Bkraj_ids%5D%5B%5D=19&form%5Btyp_nabidky%5D=2",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://realitymix.cz/reality/nemovitosti",
+    "content_type": "text/html; charset=UTF-8",
+    "size": 429569,
+    "head": "<!DOCTYPE html>\n<html lang=\"cs\" class='no-js '>\n    <head>\n        <link rel=\"dns-prefetch\" href=\"//st.rmix.cz\" >\n        <link rel=\"dns-prefetch\" href=\"//st.realitymix.cz\" >\n        <link rel=\"dns-prefetch\" href=\"//tralala.dalten.cz\" >\n        <link rel=\"dns-prefetch\" href=\"//www.google.com\" >\n    "
+  },
+  "ulovdomov_html": {
+    "url": "https://www.ulovdomov.cz/pronajem/bytu/praha",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.ulovdomov.cz/pronajem/bytu/praha",
+    "content_type": "text/html; charset=utf-8",
+    "size": 94763,
+    "head": "<!DOCTYPE html><html lang=\"cs-CZ\"><head><meta charSet=\"utf-8\"/><meta name=\"author\" content=\"UlovDomov.cz, s.r.o.\"/><meta name=\"keywords\" content=\"pronájem, byt, bytu, spolubydleni\"/><meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum"
+  },
+  "remax_html": {
+    "url": "https://www.remax-czech.cz/reality/vyhledavani/?regions%5B19%5D=on&types%5B4%5D=on&sale=2",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.remax-czech.cz/reality/byty/pronajem/praha/",
+    "content_type": "text/html; charset=UTF-8",
+    "size": 260553,
+    "head": "<!DOCTYPE html>\n<html lang=\"cs\">\n\t<head>\n\t\t<meta charset=\"UTF-8\" />\n\t\t\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t<title>Pronájem bytu Praha\t\t|\n\t\tReality REMAX</title><meta property=\"og:title\" content=\"Pronájem bytu Praha\t\t|\n\t\tReality REMAX\" /><meta name=\"twitter:title"
+  },
+  "robots_sreality": {
+    "url": "https://www.sreality.cz/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.sreality.cz/robots.txt",
+    "content_type": "text/plain; charset=utf-8",
+    "size": 28202,
+    "head": "User-agent: *\nDisallow: /\n\n############################\n#    neplecha ukončena     #\n############################\n\n\nUser-agent: Googlebot\nAllow: /\nDisallow: /advertpdf/\nDisallow: /favourites-info\nDisallow: *_buri=\nDisallow: /adresar/*page=\nDisallow: /adresar/*perPage=\nDisallow: /adresar/*search=\nDis"
+  },
+  "robots_bezrealitky": {
+    "url": "https://www.bezrealitky.cz/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.bezrealitky.cz/robots.txt",
+    "content_type": "text/plain",
+    "size": 338,
+    "head": "#CS robots.txt\nUser-agent: *\nDisallow: /vyhledat*\nDisallow: /moje-bezrealitky/*\nDisallow: /*callbackUrl=*\nDisallow: /centrum-sluzeb/bezrealitky-hypoteka/form*\nDisallow: /centrum-sluzeb/bezrealitky-hypoteka*price=*\nDisallow: /centrum-sluzeb/bezrealitky-hypoteka?*\nDisallow: /search*\nSitemap: https://w"
+  },
+  "robots_idnes": {
+    "url": "https://reality.idnes.cz/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://reality.idnes.cz/robots.txt",
+    "content_type": "text/html; charset=utf-8",
+    "size": 967,
+    "head": "User-agent: *\nAllow: /\n# search\nDisallow: /s/*|* #multihodnoty\nDisallow: /s/*%7C* #multihodnoty\nDisallow: /s/*s-rd\nDisallow: /s/*s-rd*&*\nAllow: /s/*s-rd=3\nDisallow: /s/*page=*sort=\nDisallow: /s/*;\nDisallow: /s/*cena-nad-*\nDisallow: /s/*cena-do*sort=\nDisallow: /s/*/do-*sort=\nDisallow: /s/*priceMin*so"
+  },
+  "robots_realitymix": {
+    "url": "https://realitymix.cz/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://realitymix.cz/robots.txt",
+    "content_type": "text/plain",
+    "size": 562,
+    "head": "Sitemap: https://realitymix.cz/sitemap/sitemap.xml\n\nUser-agent: *\nAllow: /\nDisallow: /nabidka/galerie-obchodni-sdeleni.html\nDisallow: /nabidka/podobne.html\nDisallow: /developersky-projekt/poslat-na-email/\nDisallow: /developersky-projekt/poslat-dotaz/\nDisallow: /nabidka/zajem-o-hypoteku/\nDisallow: /n"
+  },
+  "robots_ulovdomov": {
+    "url": "https://www.ulovdomov.cz/robots.txt",
+    "method": "GET",
+    "status": 200,
+    "final_url": "https://www.ulovdomov.cz/robots.txt",
+    "content_type": "text/plain; charset=UTF-8",
+    "size": 124,
+    "head": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://www.ulovdomov.cz\n\n# Sitemaps\nSitemap: https://www.ulovdomov.cz/sitemap.xml\n"
+  },
+  "sreality_v2_detail": {
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  }
+}

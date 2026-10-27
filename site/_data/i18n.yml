@@ -1,7 +1,7 @@
 it:
   lang_name: Italiano
-  title: RadarFlat — tutti gli appartamenti di Praga
-  description: Tutti gli annunci di appartamenti in affitto e in vendita a Praga, raccolti da più portali in un'unica pagina con foto, mappa e filtri.
+  title: RadarFlat — tutti gli appartamenti in affitto a Praga
+  description: Tutti gli appartamenti in affitto a Praga, raccolti da più portali in un'unica pagina con foto, mappa e filtri.
   rent: Affitto
   sale: Vendita
   heading_rent: "{n} appartamenti in affitto a Praga"
@@ -110,14 +110,14 @@ it:
   atypical: atipico
   room: stanza
   # footer
-  footer_what: RadarFlat raccoglie tre volte al giorno gli annunci di appartamenti a Praga da Bezrealitky, iDNES Reality e RealityMix, toglie i doppioni e li mostra qui. Le foto e i testi restano sui siti originali e ogni scheda porta all'annuncio.
+  footer_what: RadarFlat raccoglie tre volte al giorno gli annunci di appartamenti in affitto a Praga da Sreality, Bezrealitky, iDNES Reality e RealityMix, toglie i doppioni e li mostra qui. Le foto e i testi restano sui siti originali e ogni scheda porta all'annuncio.
   footer_brand: Un servizio di Pacific IT Solutions s.r.o.
   footer_contact: Contatti
 
 en:
   lang_name: English
-  title: RadarFlat — every apartment in Prague
-  description: Every apartment for rent and for sale in Prague, collected from several listing sites onto one page with photos, a map and filters.
+  title: RadarFlat — every apartment for rent in Prague
+  description: Every apartment for rent in Prague, collected from several listing sites onto one page with photos, a map and filters.
   rent: Rent
   sale: Buy
   heading_rent: "{n} apartments for rent in Prague"
@@ -224,14 +224,14 @@ en:
   heating_other: other
   atypical: atypical
   room: room
-  footer_what: RadarFlat collects Prague apartment listings from Bezrealitky, iDNES Reality and RealityMix three times a day, removes duplicates and shows them here. Photos and texts stay on the original sites, and every listing links back to its source.
+  footer_what: RadarFlat collects Prague rental listings from Sreality, Bezrealitky, iDNES Reality and RealityMix three times a day, removes duplicates and shows them here. Photos and texts stay on the original sites, and every listing links back to its source.
   footer_brand: A service of Pacific IT Solutions s.r.o.
   footer_contact: Contact
 
 cs:
   lang_name: Čeština
-  title: RadarFlat — všechny byty v Praze
-  description: Všechny byty k pronájmu a na prodej v Praze z několika realitních serverů na jedné stránce, s fotkami, mapou a filtry.
+  title: RadarFlat — všechny byty k pronájmu v Praze
+  description: Všechny byty k pronájmu v Praze z několika realitních serverů na jedné stránce, s fotkami, mapou a filtry.
   rent: Pronájem
   sale: Prodej
   heading_rent: "{n} bytů k pronájmu v Praze"
@@ -338,6 +338,6 @@ cs:
   heating_other: jiné
   atypical: atypický
   room: pokoj
-  footer_what: RadarFlat třikrát denně sbírá inzeráty bytů v Praze z Bezrealitky, iDNES Reality a RealityMix, odstraní duplicity a zobrazí je zde. Fotky a texty zůstávají na původních webech a každý inzerát vede ke zdroji.
+  footer_what: RadarFlat třikrát denně sbírá inzeráty pronájmů bytů v Praze ze Sreality, Bezrealitky, iDNES Reality a RealityMix, odstraní duplicity a zobrazí je zde. Fotky a texty zůstávají na původních webech a každý inzerát vede ke zdroji.
   footer_brand: Služba společnosti Pacific IT Solutions s.r.o.
   footer_contact: Kontakt

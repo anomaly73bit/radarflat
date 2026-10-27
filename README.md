@@ -1,8 +1,9 @@
 # RadarFlat
 
-**Tutti gli appartamenti di Praga su una pagina.** Un robot raccoglie tre volte al giorno gli annunci di appartamenti in affitto e in vendita a Praga, toglie i doppioni (lo stesso appartamento pubblicato su più portali) e li mostra su un sito Jekyll con foto, mappa, filtri e scheda dettagliata.
+**Tutti gli appartamenti in affitto a Praga su una pagina.** Un robot raccoglie tre volte al giorno gli annunci di appartamenti in affitto a Praga (solo affitti), toglie i doppioni (lo stesso appartamento pubblicato su più portali) e li mostra su un sito Jekyll con foto, mappa, filtri e scheda dettagliata.
 
 Sito: <https://radarflat.pacificit.solutions> — italiano, inglese e ceco.
+
 
 ## Cosa fa il sito
 
@@ -21,11 +22,11 @@ Sito: <https://radarflat.pacificit.solutions> — italiano, inglese e ceco.
 | Bezrealitky.cz | dati Next.js delle pagine pubbliche `/vypis/…` e delle schede | privati senza agenzia; l'API GraphQL è vietata dal robots.txt e non viene usata |
 | Reality.iDNES.cz | HTML delle pagine di ricerca e delle schede | |
 | RealityMix.cz | HTML delle pagine di ricerca e delle schede | |
-| Sreality.cz | API JSON della ricerca | **spento**: il robots.txt di Sreality vieta tutti i crawler tranne i motori di ricerca |
+| Sreality.cz | API JSON della ricerca e delle schede | il robots.txt di Sreality vieta tutti i crawler tranne i motori di ricerca: acceso per scelta del proprietario, `respect_robots_txt: false` solo per questa fonte |
 
-Il robot rispetta `robots.txt`, si identifica come `RadarFlatBot`, aspetta 3–6 secondi tra una richiesta e l'altra sullo stesso sito e si ferma su un sito appena riceve un blocco. Le foto **non vengono copiate**: sono mostrate dal sito originale e ogni scheda porta all'annuncio.
+Per le altre fonti il robot rispetta `robots.txt`, si identifica come `RadarFlatBot`, aspetta 3–6 secondi tra una richiesta e l'altra sullo stesso sito e si ferma su un sito appena riceve un blocco. Le foto **non vengono copiate**: sono mostrate dal sito originale e ogni scheda porta all'annuncio.
 
-Per accendere Sreality comunque (decisione tua): in `config/sources.yaml` metti `enabled: true` e `respect_robots_txt: false` sotto `sreality`.
+Per spegnere Sreality: `enabled: false` sotto `sreality` in `config/sources.yaml`. Per tornare anche alle vendite: `offers: [rent, sale]` (il sito andrebbe adattato).
 
 ## Uso
 

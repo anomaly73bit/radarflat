@@ -11,7 +11,6 @@
   /* ---------- URL <-> form ---------- */
   function readUrl() {
     const p = new URLSearchParams(location.search);
-    offer = p.get("o") === "s" ? "s" : "r";
     for (const el of form.elements) {
       if (!el.name) continue;
       if (el.type === "checkbox") el.checked = p.getAll(el.name).includes(el.value);
@@ -20,7 +19,6 @@
   }
   function writeUrl() {
     const p = new URLSearchParams();
-    if (offer === "s") p.set("o", "s");
     for (const el of form.elements) {
       if (!el.name) continue;
       if (el.type === "checkbox") { if (el.checked) p.append(el.name, el.value); }
@@ -124,7 +122,6 @@
     cardsEl.innerHTML = results.slice(0, shown).map(card).join("");
     $("#empty").hidden = results.length > 0;
     $("#more").hidden = results.length <= shown;
-    document.querySelectorAll(".offer-switch button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.offer === offer)));
   }
   const today = () => new Date().toISOString().slice(0, 10);
 
@@ -170,10 +167,6 @@
   form.addEventListener("reset", () => setTimeout(() => apply(), 0));
   form.addEventListener("submit", (e) => e.preventDefault());
   $("#more").addEventListener("click", () => { shown += PAGE; render(); });
-  document.querySelectorAll(".offer-switch button").forEach((b) => b.addEventListener("click", () => {
-    offer = b.dataset.offer;
-    apply();
-  }));
   const fab = $("#toggle-map");
   fab.addEventListener("click", () => {
     const on = document.body.classList.toggle("map-open");

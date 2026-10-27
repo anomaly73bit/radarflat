@@ -70,3 +70,10 @@ def test_dedupe():
     groups = dedupe([a, b, c])
     sizes = sorted(len(g) for g in groups)
     assert sizes == [1, 2]
+
+
+def test_sreality_detail():
+    res = json.loads(read("sreality_detail.json"))["result"]
+    d = sreality.parse_detail(res)
+    assert d["area"] == 52 and d["floor"] == 9 and d["lift"] is True and d["penb"] == "B"
+    assert d["furnished"] == "yes" and d["description"] and len(d["images"]) > 5 and d["loggia"]

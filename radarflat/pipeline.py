@@ -69,6 +69,10 @@ def crawl(only_sources: list[str] | None = None, details: int | None = None) -> 
     rate = eur_rate(cfg)
     report: dict = {"started": datetime.now(timezone.utc).isoformat(timespec="seconds"), "eur_czk": rate, "sources": {}}
 
+    # drop anything outside the configured offers (e.g. sale listings after switching to rent only)
+    for rid in [k for k, r in state.items() if r.get("offer") not in cfg["offers"]]:
+        del state[rid]
+
     enabled = [n for n, s in cfg["sources"].items() if s.get("enabled") and n in ALL
                and (not only_sources or n in only_sources)]
 
@@ -276,7 +280,8 @@ def shard_of(rid: str) -> str:
 
 
 def publish(state: dict[str, dict], report: dict | None = None, rate: float | None = None) -> None:
-    recs = [r for r in state.values() if r.get("price_czk") and r.get("offer") in ("rent", "sale")]
+    offers = load_cfg().get("offers", ["rent", "sale"])
+    recs = [r for r in state.values() if r.get("price_czk") and r.get("offer") in offers]
     groups = dedupe(recs)
     # quarter medians of price per m² (primary copies only)
     prim = []

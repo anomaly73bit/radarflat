@@ -1,16 +1,20 @@
 """Sreality.cz — JSON search API (/api/v1/estates/search).
 
+Detail: /api/v1/estates/<hash_id>.
+
 Sreality's robots.txt disallows every crawler except search engines ("User-agent: * / Disallow: /").
-The source is therefore OFF in config/sources.yaml; turning it on requires both `enabled: true`
-and `respect_robots_txt: false` for this source, and is the operator's own decision.
+The owner chose to use it anyway (config/sources.yaml: enabled + respect_robots_txt: false).
 """
 from __future__ import annotations
 
-from ..geo import canonical_quarter, district_of_quarter
-from ..model import blank, norm_disp
+import re
+
+from ..geo import canonical_quarter, district_of_quarter, fold
+from ..model import blank, furnished, norm_disp, to_int
 from .base import Source, log
 
 API = "https://www.sreality.cz/api/v1/estates/search"
+DETAIL = "https://www.sreality.cz/api/v1/estates/{}"
 TYPE = {"rent": 2, "sale": 1}
 TYPE_SLUG = {"rent": "pronajem", "sale": "prodej"}
 
@@ -42,8 +46,54 @@ def to_listing(e: dict, offer: str) -> dict:
     return d
 
 
+def _img(u: str) -> str:
+    return ("https:" + u if u.startswith("//") else u) + "?fl=res,1024,768,1"
+
+
+def _name(v) -> str:
+    return (v or {}).get("name") or "" if isinstance(v, dict) else ""
+
+
+def parse_detail(res: dict) -> dict:
+    from .idnes import _condition
+    out: dict = {"detail_done": True}
+    out["description"] = (res.get("advert_description") or "").strip()[:4000] or None
+    imgs = [_img(i["url"]) for i in sorted(res.get("advert_images") or [], key=lambda i: i.get("order") or 0) if i.get("url")]
+    if imgs:
+        out["images"] = imgs
+    out["area"] = res.get("usable_area") or res.get("floor_area")
+    fn = res.get("floor_number")
+    out["floor"] = fn - 1 if isinstance(fn, int) else None          # Sreality counts above-ground floors (1 = ground)
+    out["floors_total"] = res.get("floors")
+    out["lift"] = {1: True, 2: False}.get((res.get("elevator") or {}).get("value"))
+    for k in ("balcony", "terrace", "loggia", "cellar", "garage"):
+        out[k] = bool(res.get(k)) or None
+    out["parking"] = bool(res.get("parking") or res.get("parking_lots")) or None
+    fu = fold(_name(res.get("furnished")))
+    out["furnished"] = "partly" if "castec" in fu else "yes" if fu.startswith("ano") else "no" if fu.startswith("ne") else None
+    out["condition"] = _condition(_name(res.get("building_condition")))
+    bt = fold(_name(res.get("building_type")))
+    out["construction"] = ("brick" if "cihl" in bt else "panel" if "panel" in bt else "skeleton" if "skelet" in bt
+                           else "mixed" if "smis" in bt else "wood" if "drev" in bt else ("other" if bt and "vyber" not in bt else None))
+    ow = fold(_name(res.get("ownership")))
+    out["ownership"] = "personal" if "osob" in ow else "cooperative" if "druz" in ow else "municipal" if "stat" in ow or "obec" in ow else None
+    m = re.match(r"\s*([A-G])\b", _name(res.get("energy_efficiency_rating_cb")))
+    out["penb"] = m.group(1) if m else None
+    out["available_from"] = res.get("ready_date") or None
+    out["deposit"] = to_int(res.get("refundable_deposit")) or None
+    out["charges"] = to_int(res.get("cost_of_living")) or None
+    if res.get("price_czk"):
+        out["price"] = int(res["price_czk"])
+        out["currency"] = "CZK"
+    loc = res.get("locality") or {}
+    if loc.get("gps_lat"):
+        out["lat"], out["lon"] = loc["gps_lat"], loc["gps_lon"]
+    out["private"] = False if res.get("premise") else None
+    out["title"] = res.get("advert_name")
+    return out
+
+
 def _area(name: str):
-    import re
     m = re.search(r"(\d+)\s*m²", name)
     return int(m.group(1)) if m else None
 
@@ -51,7 +101,6 @@ def _area(name: str):
 class Sreality(Source):
     name = "sreality"
     label = "Sreality"
-    needs_detail = False
 
     def listings(self, offer):
         limit, offset, total, n = 60, 0, None, 0
@@ -70,3 +119,13 @@ class Sreality(Source):
             if offset > 60 * self.max_pages():
                 break
         log.info("sreality %s: %d listings", offer, n)
+
+    def detail(self, listing):
+        r = self.client.get(DETAIL.format(listing["source_id"]), params={"lang": "cs"})
+        if r.status_code in (404, 410):
+            return None
+        data = r.json()
+        res = data.get("result") if isinstance(data, dict) else None
+        if not res:
+            return None if data.get("status_code") in (404, 410) else {}
+        return parse_detail(res)

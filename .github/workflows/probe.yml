@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "radarflat-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add probe
+          git add -f probe
           git diff --cached --quiet || git commit -m "probe: sources $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

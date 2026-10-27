@@ -1,13 +1,13 @@
 {
- "updated": "2026-10-27T13:29+00:00",
+ "updated": "2026-10-27T14:00+00:00",
  "count": 4171,
  "rent": 4171,
  "sale": 0,
  "raw": 6185,
  "per_source": {
+  "bezrealitky": 1022,
   "realitymix": 1633,
-  "sreality": 3530,
-  "bezrealitky": 1022
+  "sreality": 3530
  },
  "new_today": 4171,
  "quarters": [
@@ -121,12 +121,12 @@
   "Praha 7",
   "Praha 8"
  ],
- "eur_czk": 24.365,
+ "eur_czk": null,
  "medians": {
   "rent|Bohnice": 414,
   "rent|Braník": 433,
   "rent|Bubeneč": 489,
-  "rent|Břevnov": 456,
+  "rent|Břevnov": 459,
   "rent|Chodov": 443,
   "rent|Dejvice": 450,
   "rent|Dolní Chabry": 419,
@@ -144,7 +144,7 @@
   "rent|Háje": 445,
   "rent|Jinonice": 443,
   "rent|Josefov": 500,
-  "rent|Kamýk": 418,
+  "rent|Kamýk": 428,
   "rent|Karlín": 569,
   "rent|Kbely": 456,
   "rent|Kobylisy": 419,
@@ -158,9 +158,9 @@
   "rent|Liboc": 365,
   "rent|Libuš": 471,
   "rent|Malešice": 429,
-  "rent|Malá Strana": 534,
+  "rent|Malá Strana": 542,
   "rent|Michle": 470,
-  "rent|Modřany": 426,
+  "rent|Modřany": 425,
   "rent|Motol": 494,
   "rent|Nové Město": 513,
   "rent|Nusle": 500,
@@ -180,7 +180,7 @@
   "rent|Stodůlky": 438,
   "rent|Strašnice": 436,
   "rent|Střešovice": 486,
-  "rent|Střížkov": 460,
+  "rent|Střížkov": 451,
   "rent|Suchdol": 474,
   "rent|Troja": 414,
   "rent|Třebonice": 487,
@@ -191,7 +191,7 @@
   "rent|Vokovice": 444,
   "rent|Vršovice": 491,
   "rent|Vysočany": 464,
-  "rent|Vyšehrad": 549,
+  "rent|Vyšehrad": 524,
   "rent|Zbraslav": 472,
   "rent|Zličín": 412,
   "rent|Záběhlice": 401,
@@ -204,13 +204,5 @@
   "rent|Štěrboholy": 440,
   "rent|Žižkov": 489
  },
- "errors": {
-  "idnes": [
-   "rent: 429 anti-bot response from reality.idnes.cz"
-  ],
-  "bezrealitky": [
-   "detail bezrealitky-633527: Exception: HTTP 503",
-   "detail bezrealitky-995473: Exception: HTTP 503"
-  ]
- }
+ "errors": {}
 }

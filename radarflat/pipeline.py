@@ -35,7 +35,8 @@ def load_state() -> dict[str, dict]:
     if not STATE.exists():
         return {}
     out = {}
-    for line in STATE.read_text(encoding="utf-8").splitlines():
+    # split on "\n" only: descriptions may contain U+2028 and other characters str.splitlines() breaks on
+    for line in STATE.read_text(encoding="utf-8").split("\n"):
         if line.strip():
             r = json.loads(line)
             out[r["id"]] = r
@@ -44,7 +45,8 @@ def load_state() -> dict[str, dict]:
 
 def save_state(state: dict[str, dict]) -> None:
     STATE.parent.mkdir(parents=True, exist_ok=True)
-    lines = [json.dumps(state[k], ensure_ascii=False, sort_keys=True) for k in sorted(state)]
+    lines = [json.dumps(state[k], ensure_ascii=False, sort_keys=True).replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
+             for k in sorted(state)]
     STATE.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
